@@ -1,0 +1,40 @@
+h1,
+h2,
+h3,
+h4 {
+  margin: 0;
+  line-height: 1;
+}
+h1 {
+  font-size: var(--fs-h1);
+}
+h2 {
+  font-size: var(--fs-h2);
+}
+h3 {
+  font-size: var(--fs-h3);
+}
+img {
+  max-width: 100%;
+  display: block;
+}
+.border {
+  border: 2px solid red;
+}
+.border1 {
+  border: 3px solid green;
+}
+.border2 {
+  border: 1px solid yellow;
+}
+.border3 {
+  border: 1px solid rgb(72, 255, 0);
+}
+body {
+  margin: 0;
+  font-family: var(--ff-primary);
+  font-size: var(--fs-body);
+  line-height: 1.6;
+  text-transform: capitalize;
+  background-color: var(--clr-radish);
+}

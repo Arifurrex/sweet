@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>cocacola</title>
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.15.1/css/all.css"
+      integrity="sha384-vp86vTRFVJgpjF9jiIGPEEqYqlDwgyBgEF109VFjmqGmIY/Y4HV4d3Gp2irVfcrp"
+      crossorigin="anonymous"
+    />
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Hind+Vadodara&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/swiper/swiper-bundle.min.css"
+    />
+    <link rel="stylesheet" href="src/2-styles/main.css" />
+  </head>
+  <body>
+    <section class="hero">
+      <div class="circle"></div>
+      <div class="header">
+        <a href="#"><img src="image/logo3.png" alt="" class="logo" /></a>
+        <ul class="nav">
+          <li><a href="">home</a></li>
+          <li><a href="">menu</a></li>
+          <li><a href="">new comming</a></li>
+          <li><a href="">contact</a></li>
+        </ul>
+        <div class="menu-btn toggle" onclick="togglemenu()">
+          <div class="menu-btn__burger"></div>
+        </div>
+      </div>
+      <div class="content">
+        <div class="leftside">
+          <h2 class="leftside__header">sweet is everything</h2>
+          <p class="leftside__paragraph">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Itaque ut
+            illum molestias. Quibusdam aperiam optio perspiciatis doloribus,
+            eius ducimus molestias culpa ratione hic provident dolorem,
+            voluptatum facilis earum natus doloremque placeat corrupti atque
+            repellat asperiores quo ipsam? Possimus est, quaerat illum
+            accusantium.
+          </p>
+          <a href="" class="btn btn_6">learn more</a>
+        </div>
+        <!-- ========== -->
+        <div class="rightside">
+          <!-- Swiper -->
+          <div class="swiper-container">
+            <div class="swiper-wrapper">
+              <div class="swiper-slide">
+                <img src="image/1.png" class="swiper-img" alt="" />
+              </div>
+              <div class="swiper-slide">
+                <img src="image/2.png" class="swiper-img" alt="" />
+              </div>
+              <div class="swiper-slide">
+                <img src="image/3.png" class="swiper-img" alt="" />
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="downside">
+        <a href="" class="downsi"
+          ><img
+            src="image/desktop/icon-facebook-color.svg"
+            alt=""
+            class="downside_img"
+        /></a>
+        <a href="" class="downsi"
+          ><img
+            src="image/desktop/icon-instagram.svg"
+            alt=""
+            class="downside_img"
+        /></a>
+        <a href="" class="downsi"
+          ><img
+            src="image/desktop/icon-twitter.svg"
+            alt=""
+            class="downside_img"
+        /></a>
+      </div>
+    </section>
+
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+    <!-- Initialize Swiper -->
+    <script>
+      const menutoggle = document.querySelector('.menu-btn');
+      const nav = document.querySelector('.nav');
+      function togglemenu() {
+        menutoggle.classList.toggle('open');
+        // nav.classList.toggle('mobilenav');
+        nav.classList.toggle('mobilenav');
+      }
+      // ============
+      var swiper = new Swiper('.swiper-container', {
+        effect: 'coverflow',
+        grabCursor: true,
+        centeredSlides: true,
+        slidesPerView: 'auto',
+        coverflowEffect: {
+          rotate: 0,
+          stretch: 150,
+          depth: 200,
+          modifier: 1,
+          slideShadows: true,
+        },
+        loop: true,
+      });
+    </script>
+  </body>
+</html>

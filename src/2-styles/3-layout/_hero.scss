@@ -1,0 +1,214 @@
+.hero {
+  background: var(--clr-dark);
+  min-height: 100vh;
+  width: 100%;
+  padding: 4em 0;
+  position: relative;
+  @include flex(flex, row, space-between, center);
+  .circle {
+    position: absolute;
+    top: 0;
+    right: 0;
+    height: 100%;
+    width: 100%;
+    background: var(--clr-red);
+    clip-path: circle(70% at right top);
+  }
+  .header {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    @include flex(flex, row, space-between, center);
+
+    .logo {
+      position: relative;
+      max-width: 150px;
+    }
+    .nav {
+      position: relative;
+      @include flex(flex, row, space-around, center);
+      width: 50%;
+      li {
+        list-style: none;
+        a {
+          display: inline-block;
+          color: var(--clr-ligh);
+          font-size: 1rem;
+          font-size: clamp(0.85rem, calc(3vw+1rem), 1rem);
+          font-weight: var(--fw-reg);
+          text-decoration: none;
+        }
+      }
+    }
+  }
+  .content {
+    position: relative;
+    width: 90%;
+    max-width: 1250px;
+    margin: 0 auto;
+    @include flex(flex, row, space-between, center);
+    flex-wrap: wrap;
+    flex-grow: 1;
+
+    // =======
+    .leftside {
+      width: 600px;
+      flex-grow: 1;
+      color: var(--clr-ligh);
+      padding: 0 2em;
+      .leftside__header {
+        font-size: 4.5rem;
+        font-size: clamp(1.5rem, calc(5vw+1rem), 4.5rem);
+      }
+      .leftside__paragraph {
+        margin-top: 1em;
+        font-size: 1.1rem;
+        font-size: clamp(0.85rem, calc(3vw+1rem), 1.1rem);
+        line-height: 1.6;
+        color: var(--clr-lessligh);
+      }
+      // =..=
+      .btn {
+        display: inline-block;
+        text-decoration: none;
+        color: var(--clr-ligh);
+        background: var(--clr-red);
+        padding: 0.75em 2em;
+        font-size: 1rem;
+        font-size: clamp(0.85rem, calc(3vw+1rem), 1rem);
+        font-weight: var(--fw-bold);
+        letter-spacing: 1px;
+        border-radius: 100px;
+        margin-top: 1rem;
+        box-shadow: var(--bs1);
+      }
+    }
+
+    // =================
+    .rightside {
+      width: 500px;
+      min-width: 300px;
+      flex-grow: 1;
+      padding: 0 2em;
+      .swiper-container {
+        width: 100%;
+        padding-top: 50px;
+        padding-bottom: 50px;
+      }
+
+      .swiper-slide {
+        background-position: center;
+        background-size: cover;
+        width: 300px;
+        height: 300px;
+      }
+    }
+  }
+  .downside {
+    position: absolute;
+    bottom: 40px;
+    padding-left: 2em;
+    @include flex(flex, row, flex-start, center);
+    a {
+      display: inline-block;
+      background: var(--clr-ligh);
+      border-radius: 50%;
+      width: 50px;
+      height: 50px;
+      @include flex(flex, row, center, center);
+      transition: 0.2s ease-in-out;
+    }
+    a:hover {
+      background: var(--clr-red);
+      transform: translateY(-10px);
+    }
+    .downsi + .downsi {
+      margin-left: 1rem;
+    }
+    .downside_img {
+      filter: invert(1);
+      transform: scale(0.5);
+    }
+  }
+}
+.swiper-container-3d .swiper-slide-shadow-left,
+.swiper-container-3d .swiper-slide-shadow-right {
+  background: none;
+}
+
+@media (max-width: 1154px) {
+  // =====
+
+  .menu-btn {
+    position: relative;
+    z-index: 11;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 40px;
+    height: 40px;
+    cursor: pointer;
+    transition: all 0.5s ease-in-out;
+    margin-right: 24px;
+  }
+  .menu-btn__burger {
+    width: 20px;
+    height: 3px;
+    background: var(--clr-dark);
+    transition: all 0.5s ease-in-out;
+  }
+  .menu-btn__burger::before,
+  .menu-btn__burger::after {
+    content: '';
+    position: absolute;
+    width: 20px;
+    height: 3px;
+    background: var(--clr-dark);
+    transition: all 0.5s ease-in-out;
+  }
+  .menu-btn__burger::before {
+    transform: translateY(-7px);
+  }
+  .menu-btn__burger::after {
+    transform: translateY(7px);
+  }
+  /* ANIMATION BURGER */
+  .menu-btn.open .menu-btn__burger {
+    transform: translateX(50px);
+    background: transparent;
+    box-shadow: none;
+  }
+  .menu-btn.open .menu-btn__burger::before {
+    transform: rotate(45deg) translate(-35px, 35px);
+  }
+  .menu-btn.open .menu-btn__burger::after {
+    transform: rotate(-45deg) translate(-35px, -35px);
+  }
+  .hero .header .nav {
+    display: none;
+  }
+  .hero .header .mobilenav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    display: flex;
+    width: 100vw;
+    height: 100vh;
+    background: var(--clr-red);
+    z-index: 10;
+    @include flex(flex, column, center, center);
+
+    li + li {
+      margin-top: 1em;
+    }
+    li a {
+      font-size: 2rem;
+      font-weight: var(--fw-bold);
+    }
+  }
+
+  .hero .content {
+    padding: 6em 0;
+  }
+}
